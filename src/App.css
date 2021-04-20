@@ -1,0 +1,63 @@
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.btn-block {
+	width: 100%;
+}
+
+.landing-text {
+	font-family: 'Permanent Marker', cursive;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.landing-title {
+	font-family: 'Permanent Marker', cursive;
+	display: block;
+	margin-top: 80px;
+}
+
+.ans {
+	display: block;
+	text-align: center;
+}
+
+.btn-txt-space {
+	padding-top: 90px;
+}
+
+.footer {
+	padding: 1rem;
+	background-color: rgb(235, 195, 64);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.user-navbar {
+	font-size: 90px;
+	background-color: brown;
+}
+
+/* @media all and (max-width: 600px) {
+	.user-navbar {
+		font-size: 1rem;
+		background-color: brown;
+	}
+} */
+
+@media (max-width: 976px) {
+	.user-navbar {
+		font-size: 1rem;
+		background-color: brown;
+	}
+}

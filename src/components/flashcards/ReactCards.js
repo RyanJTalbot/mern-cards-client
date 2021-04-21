@@ -10,7 +10,7 @@ export default function ReactCards() {
 	// Axios async connection to backend
 	const getChoices = async () => {
 		try {
-			const daChoice = await axios.get('/reacts');
+			const daChoice = await axios.get('/api/reacts');
 
 			// Set Data
 			setChoices(daChoice.data);

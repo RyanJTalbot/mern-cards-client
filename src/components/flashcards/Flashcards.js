@@ -10,7 +10,7 @@ export default function FlashCards() {
 	// Axios async connection to backend
 	const getChoices = async () => {
 		try {
-			const daChoice = await axios.get('/cards');
+			const daChoice = await axios.get('/api/cards');
 
 			// Set Data
 			setChoices(daChoice.data);

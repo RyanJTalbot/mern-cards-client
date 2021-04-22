@@ -11,9 +11,7 @@ export const registerUser = (userData, history) => (dispatch) => {
 			'https://mern-flashcards-ryanjt.herokuapp.com/users/register',
 			userData,
 		)
-		.then((res) =>
-			history.push('https://mern-flashcards-ryanjt.herokuapp.com/cards/login'),
-		)
+		.then((res) => history.push('/login'))
 
 		// re-direct to login on successful register
 		.catch((err) =>

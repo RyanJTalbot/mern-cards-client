@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Navbarz from './Navbarz';
 import Footer from '../Footer';
 import queryString from 'query-string';
+import './Landing.css';
 import GoogleAuth from '../oauth/GoogleAuth';
 // import GoogleLogin from '../../components/auth/GoogleLogin';
 
@@ -23,20 +24,8 @@ class Landing extends Component {
 				<Container className='my-auto'>
 					<Row>
 						<Col>
-							<h1
-								className='landing-title'
-								style={{
-									fontFamily: 'Permanent Marker',
-									fontWeight: 'lighter',
-									textAlign: 'center',
-									marginTop: '8rem',
-									marginBottom: '4rem',
-								}}
-							>
-								<b style={{ paddingRight: '1.5rem', fontWeight: 'bold' }}>
-									MERN-STACK
-								</b>{' '}
-								Flashcard Application
+							<h1 className='landing-title' id='top-column'>
+								<b id='bold-header'>MERN-STACK</b> Flashcard Application
 							</h1>
 						</Col>
 					</Row>
@@ -48,29 +37,24 @@ class Landing extends Component {
 					<span>
 						<Row className='justify-content-md-center'>
 							<Col md='auto'>
-								<Button
-									href='/register'
-									variant='secondary'
-									size='lg'
-									style={{ marginRight: '5rem', fontSize: '2rem' }}
-								>
+								<Button id='btn' href='/register' variant='secondary' size='lg'>
 									Register
 								</Button>
 
 								<Button
+									id='btn-two'
 									href='/login'
 									variant='secondary'
 									size='lg'
-									style={{ marginLeft: '5rem', fontSize: '2rem' }}
 								>
 									Sign-In
 								</Button>
 							</Col>
 						</Row>
 					</span>
-					<div style={{ textAlign: 'center' }}>
+					{/* <div id='' style={{ textAlign: 'center' }}>
 						<GoogleAuth />
-					</div>
+					</div> */}
 
 					{/* <GoogleLogin /> */}
 				</Container>

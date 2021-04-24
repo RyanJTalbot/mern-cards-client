@@ -5,6 +5,7 @@ import Footer from '../Footer';
 import queryString from 'query-string';
 import GoogleAuth from '../oauth/GoogleAuth';
 // import GoogleLogin from '../../components/auth/GoogleLogin';
+import './Landing.css';
 
 class Landing extends Component {
 	componentDidMount() {
@@ -49,19 +50,19 @@ class Landing extends Component {
 						<Row className='justify-content-md-center'>
 							<Col md='auto'>
 								<Button
+									className='reg-btn'
 									href='/register'
 									variant='secondary'
 									size='lg'
-									style={{ marginRight: '5rem', fontSize: '2rem' }}
 								>
 									Register
 								</Button>
 
 								<Button
+									className='reg-btn-two'
 									href='/login'
 									variant='secondary'
 									size='lg'
-									style={{ marginLeft: '5rem', fontSize: '2rem' }}
 								>
 									Sign-In
 								</Button>

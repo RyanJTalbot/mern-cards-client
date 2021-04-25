@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Navbarz from './Navbarz';
 import Footer from '../Footer';
 import queryString from 'query-string';
-
+import GoogleAuth from '../oauth/GoogleAuth';
 import GoogleLogin from '../../components/auth/GoogleLogin';
 import './Landing.css';
 
@@ -70,7 +70,9 @@ class Landing extends Component {
 							</Col>
 						</Row>
 					</span>
-					<div style={{ textAlign: 'center' }}>{/* <GoogleAuth /> */}</div>
+					<div style={{ textAlign: 'center' }}>
+						<GoogleAuth />
+					</div>
 
 					{/* <GoogleLogin /> */}
 				</Container>

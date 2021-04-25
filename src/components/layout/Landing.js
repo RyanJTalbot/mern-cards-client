@@ -72,7 +72,7 @@ class Landing extends Component {
 					</span>
 					<div style={{ textAlign: 'center' }}>{/* <GoogleAuth /> */}</div>
 
-					<GoogleLogin />
+					{/* <GoogleLogin /> */}
 				</Container>
 
 				<Footer />

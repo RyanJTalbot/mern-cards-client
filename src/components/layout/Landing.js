@@ -76,7 +76,10 @@ class Landing extends Component {
 
 					{/* <GoogleLogin /> */}
 				</Container>
-
+				<h5 style={{ textAlign: 'center' }}>
+					to sign-in, you can use 'test@mail.com' for email and 'password' for
+					password{' '}
+				</h5>
 				<Footer />
 			</div>
 		);

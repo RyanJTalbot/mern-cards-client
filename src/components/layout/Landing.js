@@ -71,12 +71,9 @@ class Landing extends Component {
 							</Col>
 						</Row>
 					</span>
-					{/* <div style={{ textAlign: 'center' }}>
-						<GoogleAuth />
-					</div> */}
-					<Google />
-
-					{/* <GoogleLogin /> */}
+					<div style={{ textAlign: 'center', padding: '3rem 0' }}>
+						<Google />
+					</div>
 				</Container>
 				<h5 style={{ textAlign: 'center' }}>
 					to sign-in, you can use 'test@mail.com' for email and 'password' for

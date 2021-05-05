@@ -4,36 +4,22 @@ import axios from 'axios';
 import { refreshGooglToken } from '../config/refreshGoogleToken';
 
 const Google = () => {
-	const responseGoogle = (response) => {
-		console.log(response.tokenId);
-		axios({
-			method: 'POST',
-			url: `http://localhost:8000/google-login`,
-			data: { idToken: response.tokenId },
-		})
-			.then((resposne) => {
-				console.log('Google Signin Successful', response);
-				// inform parent component
+	const onSuccess = (response) => {
+		console.log('login success: currentUser:', response.profileObj);
+		axios
+			.post({
+				url: 'https://mern-flashcards-ryanjt.herokuapp.com/users/login',
+				data: { id_token: response.googleId, name: response.givenName },
 			})
-			.catch((error) => {
-				console.log('Google Sign in Error', error.response);
+			.then((res) => {
+				console.log(name, id_token);
+				history.pushState('/dashboard');
 			});
-	};
-
-	const onSuccess = (res) => {
-		console.log('login success: currentUser:', res.profileObj);
-		axios({
-			method: 'POST',
-			url: `http://localhost:8000/google-login`,
-			data: { idToken: response.tokenId },
-		}).then((response) => {
-			console.log('Google sign in successful', response);
-		});
 		refreshGooglToken;
 	};
 
-	const onFailure = (res) => {
-		console.log('login failed: res:', res);
+	const onFailure = (response) => {
+		console.log('login failed: res:', response);
 	};
 
 	return (

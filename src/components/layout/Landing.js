@@ -3,10 +3,9 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Navbarz from './Navbarz';
 import Footer from '../Footer';
 import queryString from 'query-string';
-// import GoogleAuth from '../oauth/GoogleAuth';
-// import GoogleLogin from '../../components/auth/GoogleLogin';
 import './Landing.css';
-import Google from '../auth/Google';
+// import Google from '../auth/Google';
+// import Twitter from '../auth/Twitter';
 
 class Landing extends Component {
 	componentDidMount() {
@@ -72,7 +71,7 @@ class Landing extends Component {
 						</Row>
 					</span>
 					<div style={{ textAlign: 'center', padding: '3rem 0' }}>
-						<Google />
+						{/* <Twitter /> */}
 					</div>
 				</Container>
 				<h5 style={{ textAlign: 'center' }}>

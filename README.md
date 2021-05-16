@@ -5,3 +5,13 @@
 ### Now all requests to /api/... will be proxied through to https://api.example.com straight from our CDN servers without an additional connection from the browser. If the API supports standard HTTP caching mechanisms like ETags or Last-Modified headers, the responses will even get cached by our CDN nodes.
 
 https://docs.netlify.com/routing/redirects/rewrites-proxies/#proxy-to-another-service
+
+https://github.com/Shahzayb/mern-google-login
+
+https://github.com/MeghalBisht/Gamergram
+
+https://dev.to/zelig880/how-to-catch-the-body-of-an-axios-error-4lk0
+
+https://dzone.com/articles/login-with-google-using-reactjs
+
+![image info](./pictures/image.png)

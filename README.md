@@ -11,3 +11,4 @@ removed build folder
 ## Debug Netlify build
 
 npm ERR! code ELIFECYCLE
+deleted node modules and pck.lock and re-installed

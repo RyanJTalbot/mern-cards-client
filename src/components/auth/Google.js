@@ -14,7 +14,7 @@ function GoogleAuth() {
 		<div>
 			<GoogleLogin
 				clientId='154114895444-bu5ar17gabc7cjdoquo4k5k2b274mpsu.apps.googleusercontent.com'
-				buttonText='Login'
+				buttonText='Sign in with Google'
 				onSuccess={success}
 				onFailure={responseGoogle}
 				cookiePolicy={'single_host_origin'}

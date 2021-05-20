@@ -19,7 +19,7 @@ function GoogleAuth() {
 				onFailure={responseGoogle}
 				cookiePolicy={'single_host_origin'}
 				uxMode='redirect'
-				redirectUri='http://localhost:3000/dashboard'
+				redirectUri='https://ecstatic-allen-917012.netlify.app/dashboard'
 			/>
 		</div>
 	);

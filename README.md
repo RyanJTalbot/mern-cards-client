@@ -2,13 +2,10 @@
 
 ![image info](./pictures/image.png)
 
-removed build folder
-
 ## Netlify docs for deployment
 
 - https://docs.netlify.com/configure-builds/environment-variables/
 
 ## Debug Netlify build
 
-npm ERR! code ELIFECYCLE
-deleted node modules and pck.lock and re-installed
+changed build process

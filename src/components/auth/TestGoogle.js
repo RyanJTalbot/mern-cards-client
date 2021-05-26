@@ -1,82 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import GoogleLogin from 'react-google-login';
-import axios from 'axios';
-import { isEmpty } from 'lodash';
+import { useHistory } from 'react-router-dom';
 
-function App() {
-	const [isLoggedIn, setLoginStatus] = useState(false);
-
-	const getAllUsers = async () => {
-		const data = await axios.get('/user/authenticated/getAll');
-		console.log(data);
+function onSignIn(googleUser) {
+	var id_token = googleUser.getAuthResponse().id_token;
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'https://localhost:8000/tokensignin');
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.onload = function () {
+		console.log('Signed in as: ' + xhr.responseText);
 	};
-
-	const responseGoogle = async (response) => {
-		const bodyObject = {
-			authId: response.tokenId,
-		};
-		try {
-			if (isEmpty(response.errors)) {
-				await axios.post('/login/user', bodyObject);
-				setLoginStatus(true);
-			}
-		} catch (e) {
-			console.log(e);
-		}
-	};
-
-	const logout = async () => {
-		try {
-			await axios.get('/logout/user');
-			setLoginStatus(false);
-		} catch (e) {
-			console.log(e);
-		}
-	};
-
-	useEffect(() => {
-		async function getStatus() {
-			try {
-				const data = await axios.get('/user/checkLoginStatus');
-				console.log(data);
-				if (isEmpty(data.error)) {
-					setLoginStatus(true);
-				}
-			} catch (e) {
-				console.log(e);
-				setLoginStatus(false);
-			}
-		}
-		getStatus();
-	}, []);
-
-	return (
-		<div className='App'>
-			<header className='App-header'>
-				<p>Google Login Raect/Node/Express</p>
-			</header>
-			<body>
-				<GoogleLogin
-					clientId='401853306024-pbig7urt774q77cgeeu7ebq344evo4cu.apps.googleusercontent.com'
-					render={(renderProps) => (
-						<button
-							className='btn g-sigin'
-							onClick={renderProps.onClick}
-							disabled={renderProps.disabled}
-						>
-							<p>Continue with Google</p>
-						</button>
-					)}
-					buttonText='Login'
-					onSuccess={responseGoogle}
-					onFailure={responseGoogle}
-					cookiePolicy={'single_host_origin'}
-				/>
-				<button onClick={getAllUsers}>Get All Users in db</button>
-				{isLoggedIn && <button onClick={logout}>Logout</button>}
-			</body>
-		</div>
-	);
+	xhr.send('idtoken=' + id_token);
 }
 
-export default App;
+export default onSignIn;

@@ -5,7 +5,7 @@ import Footer from '../Footer';
 import queryString from 'query-string';
 import './Landing.css';
 import GoogleAuth from '../auth/Google';
-// import Twitter from '../auth/Twitter';
+// import TestGoogle from '../auth/TestGoogle';
 
 class Landing extends Component {
 	componentDidMount() {
@@ -71,7 +71,7 @@ class Landing extends Component {
 						</Row>
 					</span>
 					<div style={{ textAlign: 'center', padding: '3rem 0' }}>
-						<GoogleAuth />
+						{/* <GoogleAuth /> */}
 					</div>
 				</Container>
 				<h5 style={{ textAlign: 'center' }}>

@@ -38,35 +38,35 @@ import Dashboard from './components/dashboard/Dashboard';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Check for token to keep user logged in
-if (localStorage.jwtToken) {
-	// Set auth token header auth
-	const token = localStorage.jwtToken;
-	setAuthToken(token);
-	// Decode token and get user info and exp
-	const decoded = jwt_decode(token);
-	// Set user and isAuthenticated
-	store.dispatch(setCurrentUser(decoded));
+// if (localStorage.jwtToken) {
+// 	// Set auth token header auth
+// 	const token = localStorage.jwtToken;
+// 	setAuthToken(token);
+// 	// Decode token and get user info and exp
+// 	const decoded = jwt_decode(token);
+// 	// Set user and isAuthenticated
+// 	store.dispatch(setCurrentUser(decoded));
 
-	// Check for expired token
-	const currentTime = Date.now() / 1000;
+// 	// Check for expired token
+// 	const currentTime = Date.now() / 1000;
 
-	// to get in milliseconds
-	if (decoded.exp < currentTime) {
-		// Logout user
-		store.dispatch(logoutUser());
-		// Redirect to login
-		window.location.href = './login';
-	}
-}
+// 	// to get in milliseconds
+// 	if (decoded.exp < currentTime) {
+// 		// Logout user
+// 		store.dispatch(logoutUser());
+// 		// Redirect to login
+// 		window.location.href = './login';
+// 	}
+// }
 
 class App extends Component {
-	UNSAFE_componentWillMount() {
-		var query = queryString.parse(this.props.location.search);
-		if (query.token) {
-			window.localStorage.setItem('jwt', query.token);
-			this.props.history.push('/dashboard');
-		}
-	}
+	// UNSAFE_componentWillMount() {
+	// 	var query = queryString.parse(this.props.location.search);
+	// 	if (query.token) {
+	// 		window.localStorage.setItem('jwt', query.token);
+	// 		this.props.history.push('/dashboard');
+	// 	}
+	// }
 
 	render() {
 		return (
@@ -74,23 +74,19 @@ class App extends Component {
 				<Router>
 					<div className='App'>
 						<Switch>
-							<Route exact path='/' component={Landing} />
-							<Route exact path='/register' component={Register} />
+							<Route exact path='/' component={FcardPage} />
+							{/* <Route exact path='/register' component={Register} />
 							<Route exact path='/login' component={Login} />
 
-							<PrivateRoute exact path='/dashboard' component={Dashboard} />
-							<PrivateRoute exact path='/cards' component={FcardPage} />
-							<PrivateRoute exact path='/reduxs' component={ReduxPage} />
-							<PrivateRoute exact path='/expresses' component={ExpressPage} />
-							<PrivateRoute exact path='/npms' component={NPMPage} />
-							<PrivateRoute
-								exact
-								path='/javascripts'
-								component={JavaScriptPage}
-							/>
-							<PrivateRoute exact path='/reacts' component={ReactPage} />
-							<PrivateRoute exact path='/mongos' component={MongoPage} />
-							<PrivateRoute exact path='/nodes' component={NodePage} />
+							<Route exact path='/dashboard' component={Dashboard} /> */}
+							<Route exact path='/cards' component={FcardPage} />
+							<Route exact path='/reduxs' component={ReduxPage} />
+							<Route exact path='/expresses' component={ExpressPage} />
+							<Route exact path='/npms' component={NPMPage} />
+							<Route exact path='/javascripts' component={JavaScriptPage} />
+							<Route exact path='/reacts' component={ReactPage} />
+							<Route exact path='/mongos' component={MongoPage} />
+							<Route exact path='/nodes' component={NodePage} />
 							<Route component={NotFoundPage} />
 
 							{/* To populate a new flashcards set use the following and change the Create Card */}

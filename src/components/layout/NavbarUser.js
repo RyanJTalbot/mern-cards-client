@@ -11,7 +11,7 @@ class NavbarUser extends Component {
 				variant='light'
 				style={{ fontSize: '2rem' }}
 			>
-				<Navbar.Brand href='/dashboard'>RyanJT.dev | </Navbar.Brand>
+				<Navbar.Brand href='/'>RyanJT.dev | </Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='mr-auto'>
